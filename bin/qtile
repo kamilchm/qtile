@@ -123,6 +123,7 @@ def make_qtile():
 
 
 if __name__ == "__main__":
+    __import__("importlib").import_module("libqtile.utils").restore_os_environment()
     rename_process()
     q = make_qtile()
     try:

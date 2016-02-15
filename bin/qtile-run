@@ -50,6 +50,7 @@ def main():
     proc.wait()
 
 if __name__ == "__main__":
+    __import__("importlib").import_module("libqtile.utils").restore_os_environment()
     try:
         main()
     except KeyboardInterrupt:

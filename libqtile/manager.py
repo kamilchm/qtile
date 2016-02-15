@@ -1329,7 +1329,7 @@ class Qtile(command.CommandObject):
         argv = [s for s in argv if not s.startswith('--with-state')]
         argv.append('--with-state=' + buf.getvalue().decode())
 
-        self.cmd_execute(sys.executable, argv)
+        self.cmd_execute(os.environ.get("QTILE_WRAPPER", "@out@/bin/qtile"), argv[1:])
 
     def cmd_spawn(self, cmd):
         """

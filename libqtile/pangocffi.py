@@ -58,9 +58,9 @@ except ImportError:
     else:
         raise ImportError("No module named libqtile._ffi_pango, be sure to run `python ./libqtile/ffi_build.py`")
 
-gobject = ffi.dlopen('libgobject-2.0.so.0')
-pango = ffi.dlopen('libpango-1.0.so.0')
-pangocairo = ffi.dlopen('libpangocairo-1.0.so.0')
+gobject = ffi.dlopen('@glib@/lib/libgobject-2.0.so.0')
+pango = ffi.dlopen('@pango@/lib/libpango-1.0.so.0')
+pangocairo = ffi.dlopen('@pango@/lib/libpangocairo-1.0.so.0')
 
 
 def CairoContext(cairo_t):

@@ -25,6 +25,8 @@
 Qtile session manager.
 """
 
+__import__("importlib").import_module("libqtile.utils").restore_os_environment()
+
 from libqtile.log_utils import init_log
 import logging
 import os

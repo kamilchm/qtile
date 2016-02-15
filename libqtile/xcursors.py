@@ -112,7 +112,7 @@ class Cursors(dict):
 
     def _setup_xcursor_binding(self):
         try:
-            xcursor = ffi.dlopen('libxcb-cursor.so')
+            xcursor = ffi.dlopen('@xcb-cursor@/lib/libxcb-cursor.so')
         except OSError:
             logger.warning("xcb-cursor not found, fallback to font pointer")
             return False

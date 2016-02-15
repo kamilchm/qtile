@@ -227,3 +227,11 @@ def describe_attributes(obj, attrs, func=None):
             pairs.append('%s=%s' % (attr, value))
 
     return ', '.join(pairs)
+
+
+def restore_os_environment():
+    pythonpath = os.environ.pop("QTILE_SAVED_PYTHONPATH", "")
+    os.environ["PYTHONPATH"] = pythonpath
+    path = os.environ.pop("QTILE_SAVED_PATH", None)
+    if path:
+        os.environ["PATH"] = path
